@@ -1,0 +1,13 @@
+.block-constructor {
+    border: 1px solid black;
+    padding: 0 10px;
+    height: 600px;
+  .constructor-list {
+    border: solid 1px rgb(2, 2, 2);
+    min-height: 400px;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    display: block;
+  }
+}

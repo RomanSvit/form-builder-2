@@ -1,0 +1,7 @@
+<div class="header">
+    <h1 class="header-title">Form builder!</h1>
+    <div style="display: flex;">
+        <button class="btn-login" *ngIf="!auth.isAuthenticated()" type="button" (click)="goLogin()">Login</button>
+        <button class="btn-login" *ngIf="auth.isAuthenticated()" type="button" (click)="goLogout()">Logout</button>
+    </div>
+</div>

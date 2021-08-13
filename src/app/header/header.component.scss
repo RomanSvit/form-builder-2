@@ -1,0 +1,16 @@
+.header {
+  background-color: #bd7070;
+  height: 60px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &-title{
+      margin: 0;
+  }
+  .btn-login {
+    display: block;
+    width: 80px;
+    height: 40px;
+  }
+}

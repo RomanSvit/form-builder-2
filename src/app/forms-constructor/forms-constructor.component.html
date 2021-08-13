@@ -1,0 +1,36 @@
+<div class="block-constructor">
+  <h1 class="title-block">Forms constructor</h1>
+  <div class="example-container">
+    <form>
+      <div cdkDropList [cdkDropListData]="done" class="constructor-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of done" [ngSwitch]="item.type">
+          <ng-container *ngSwitchCase="'button'">
+            <pre>{{item.id}}</pre>
+            <button class="btn"  [attr.data-id]="item.id"
+                    cdkDrag>button
+            </button>
+          </ng-container>
+          <ng-container *ngSwitchCase="'input'">
+            <input type="text" [attr.data-id]="item.id" cdkDrag>
+          </ng-container>
+          <ng-container *ngSwitchCase="'checkbox'">
+            <div cdkDrag  [attr.data-id]="item.id">
+              <input type="checkbox">
+              <label>checkbox</label>
+            </div>
+          </ng-container>
+          <ng-container *ngSwitchCase="'textarea'">
+            <textarea  [attr.data-id]="item.id" cdkDrag></textarea>
+          </ng-container>
+          <ng-container *ngSwitchCase="'select'">
+            <select name="select"  [attr.data-id]="item.id" cdkDrag>
+              <option value="value1">Значение 1</option>
+              <option value="value2" selected>Значение 2</option>
+              <option value="value3">Значение 3</option>
+            </select>
+          </ng-container>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+{
+  "elements": [
+    {
+      "id": 1,
+      "type": "button",
+      "placeholder": "button"
+    },
+    {
+      "id": 2,
+      "type": "select",
+      "placeholder": "select"
+    },
+    {
+      "id": 3,
+      "type": "textarea",
+      "placeholder": "textarea"
+    },
+    {
+      "id": 4,
+      "type": "checkbox",
+      "placeholder": "checkbox"
+    },
+    {
+      "id": 5,
+      "type": "input",
+      "placeholder": "input"
+    }
+  ]
+}

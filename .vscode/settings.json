@@ -1,0 +1,10 @@
+{
+"editor.defaultFormatter": "Zignd.html-css-class-completion",
+"editor.formatOnPaste": true,
+"editor.formatOnSave": true,
+"diffEditor.codeLens": true,
+"editor.formatOnType": true,
+"[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+}

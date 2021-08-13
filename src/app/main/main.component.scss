@@ -1,0 +1,8 @@
+.main {
+  width: 100%;
+  display: flex;
+  .example-boundary {
+    width: (100% - 30%);
+    display: flex;
+  }
+}

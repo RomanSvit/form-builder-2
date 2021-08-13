@@ -1,0 +1,39 @@
+<div class="block-style">
+  <h1 class="title-block">Forms styles </h1>
+  <cdk-accordion class="example-accordion">
+    <ng-container *ngIf="checkEmptyObj(stateList)">
+      <cdk-accordion-item *ngFor="let item of ( stateList | ngrxPush ) | keyvalue; let index = index;"
+                          #accordionItem="cdkAccordionItem"
+                          class="example-accordion-item" role="button" tabindex="0"
+                          [attr.id]="'accordion-header-' + index"
+                          [attr.aria-expanded]="accordionItem.expanded"
+                          [attr.aria-controls]="'accordion-body-' + index">
+        <ng-container>
+          <pre>{{item.key | json}}</pre>
+          <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+            {{ item.value.type | uppercase }}
+            <span class="example-accordion-item-description">
+                Click to {{ accordionItem.expanded ? 'close' : 'open' }}
+            </span>
+          </div>
+          <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
+               [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
+            <ul>
+              <li class="styles" *ngFor="let key of item.value.styles | keyvalue ">
+                <div><span>{{key.key}}</span>: <span *ngIf="!isEditList.includes(key.key)">{{key.value}}</span>
+                  <form *ngIf="isEditList.includes(key.key)" class="styles-changes-block" action="#"
+                        (ngSubmit)="onEditMode( item.key, key.key, value )">
+                    <input type="text" name="name" [value]="key.value" [(ngModel)]="value">
+                    <button [disabled]="!value">ok</button>
+                    <button type="button" (click)="cancelEdit(key.key)">X</button>
+                  </form>
+                </div>
+                <button *ngIf="!isEditList.includes(key.key)" (click)="onEdit( key.key )">Edit</button>
+              </li>
+            </ul>
+          </div>
+        </ng-container>
+      </cdk-accordion-item>
+    </ng-container>
+  </cdk-accordion>
+</div>
