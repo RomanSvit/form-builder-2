@@ -42,10 +42,10 @@ export class FormsStylesComponent implements OnInit {
     this.isEditList = this.isEditList.filter(elem => elem !== character);
   }
 
-  checkEmptyObj(obj): boolean {
-    // tslint:disable-next-line:forin
-    for (const key in obj) {
-      return obj.hasOwnProperty(key);
-    }
-  }
+  // checkEmptyObj(obj): boolean {
+  //   // tslint:disable-next-line:forin
+  //   for (const key in obj) {
+  //     return obj.hasOwnProperty(key);
+  //   }
+  // }
 }

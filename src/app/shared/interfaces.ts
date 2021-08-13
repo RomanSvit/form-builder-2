@@ -1,5 +1,3 @@
-import {formBuilderNode} from '../reducers/formElements/form-builder-reducer';
-
 export interface User {
   email: string;
   password: string;
@@ -26,9 +24,6 @@ export interface IPropertiesObj {
     fontWeight?: string;
     backgroundColor?: string;
   };
-}
-interface IElements {
-  [index: number]: IPropertiesObj;
 }
 export interface IFormBuilder {
   elements: IPropertiesObj[] | null;
