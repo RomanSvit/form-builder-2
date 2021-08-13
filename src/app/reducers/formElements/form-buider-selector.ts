@@ -1,11 +1,7 @@
-import { IFormBuilder } from '../../shared/interfaces';
+import {IFormBuilder, IPropertiesObj} from '../../shared/interfaces';
 
 
-export interface AppState {
-  feature: IFormBuilder;
-}
-
-export const selectFeature = (state: AppState): IFormBuilder => state.feature;
+export const selectListStyles = (state: IFormBuilder): IPropertiesObj[] => state.elements ;
 
 
 

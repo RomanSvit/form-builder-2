@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { IState } from '../reducers';
 import { Observable } from 'rxjs';
 import { DataService } from '../shared/services/data.service';
-import { IFormBuilder } from '../shared/interfaces';
+import {IFormBuilder, IPropertiesObj} from '../shared/interfaces';
 import { EditStyleElements } from '../reducers/formElements/form-builder-actions';
 
 @Component({
@@ -16,7 +16,7 @@ export class FormsStylesComponent implements OnInit {
   expandedIndex = 0;
   isEditList = [];
   name = '';
-  public stateList: Observable<IFormBuilder>;
+  public stateList: Observable<IPropertiesObj[]>;
   value = '';
 
   constructor(private store$: Store<IState>,
@@ -25,6 +25,7 @@ export class FormsStylesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log("formestyles", this.stateList);
   }
 
   onEdit(character: string): void {
@@ -42,10 +43,10 @@ export class FormsStylesComponent implements OnInit {
     this.isEditList = this.isEditList.filter(elem => elem !== character);
   }
 
-  // checkEmptyObj(obj): boolean {
-  //   // tslint:disable-next-line:forin
-  //   for (const key in obj) {
-  //     return obj.hasOwnProperty(key);
-  //   }
-  // }
+  checkEmptyObj(obj): boolean {
+    // tslint:disable-next-line:forin
+    for (const key in obj) {
+      return obj.hasOwnProperty(key);
+    }
+  }
 }

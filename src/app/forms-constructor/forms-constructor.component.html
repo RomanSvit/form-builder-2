@@ -1,12 +1,12 @@
 <div class="block-constructor">
   <h1 class="title-block">Forms constructor</h1>
   <div class="example-container">
-    <form>
-      <div cdkDropList [cdkDropListData]="done" class="constructor-list" (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of done" [ngSwitch]="item.type">
+    <form *ngrxLet="stateList$; let stateList">
+      <div cdkDropList [cdkDropListData]="stateList" class="constructor-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of stateList" [ngSwitch]="item.type">
           <ng-container *ngSwitchCase="'button'">
             <pre>{{item.id}}</pre>
-            <button class="btn"  [attr.data-id]="item.id"
+            <button class="btn"   [attr.data-id]="item.id"
                     cdkDrag>button
             </button>
           </ng-container>
