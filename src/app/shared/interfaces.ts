@@ -13,16 +13,16 @@ export interface IPropertiesObj {
   id: number;
   type: string;
   styles: {
-    width?: string;
-    height?: string;
-    borderWidth?: string;
-    color?: string;
-    borderStyle?: string;
+    width: string;
+    height: string;
+    borderWidth: string;
+    color: string;
+    borderStyle: string;
     borderColor: string;
     borderRadius: string;
-    fontSize?: string;
-    fontWeight?: string;
-    backgroundColor?: string;
+    fontSize: string;
+    fontWeight: string;
+    backgroundColor: string;
   };
 }
 export interface IFormBuilder {
